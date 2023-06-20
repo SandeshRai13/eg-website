@@ -269,7 +269,7 @@ export default function App({ facilitator, id, ip, onClick }) {
       enrollment_status: enrollment_status ? enrollment_status : "",
       enrolled_for_board: enrolled_for_board ? enrolled_for_board : "",
       enrollment_number: enrollment_number ? enrollment_number : "",
-      subjects: stringsArray ? stringsArray : "",
+      subjects: stringsArray ? stringsArray : [],
       facilitator_id: localStorage.getItem("id"),
     });
   }, []);
@@ -545,7 +545,7 @@ export default function App({ facilitator, id, ip, onClick }) {
         ) : (
           <React.Fragment />
         )}
-        {page && page !== "" && formData?.enrollment_status ? (
+        {page && page !== "" ? (
           <Form
             key={lang + schema}
             ref={formRef}
